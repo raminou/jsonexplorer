@@ -1,0 +1,25 @@
+{
+  "object": [
+    {
+        "name": "alpha",
+        "extra": {
+            "value": 0,
+            "date": "01/01"
+        }
+    },
+    {
+        "name": "beta",
+        "extra": {
+            "value": 1,
+            "date": "06/06"
+        }
+    },
+    {
+        "name": "charlie",
+        "extra": {
+            "value": 2,
+            "date": "12/12"
+        }
+    }
+  ]
+}

@@ -1,0 +1,20 @@
+name: Test
+
+on:
+  [push, pull_request]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Set up Python
+      uses: actions/setup-python@v1
+      with:
+        python-version: '3.5'
+    - name: Install build dependencies
+      run: pip install -U setuptools wheel build
+    - name: Build
+      run: python3 setup.py install
+    - name: Test
+      run: python3 setup.py test
