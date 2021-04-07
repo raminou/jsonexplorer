@@ -2,6 +2,7 @@ from .parser import JsonExplorer
 import argparse
 import json
 import logging
+import sys
 
 def parse_args():
     parser = argparse.ArgumentParser()
@@ -33,8 +34,11 @@ def main():
     if(args.input_file):
         with open(args.input_file, mode="r") as f:
             input_raw = f.read()
-    else:
+    elif(args.input):
         input_raw = args.input
+    else:
+        input_raw = sys.stdin.read()
+    
     json_data = json.loads(input_raw)
     obj = JsonExplorer()
     obj.parse_and_explore(args.key, json_data)
