@@ -15,7 +15,8 @@ def parse_args():
 
 def clean_print_from_result(result):
     if(len(result) == 0):
-        print("0 result")
+        logging.debug("0 result")
+        return
 
     max_col = [0 for col in result[0]]
     for row in result:
